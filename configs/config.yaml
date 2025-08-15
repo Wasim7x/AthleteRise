@@ -1,0 +1,43 @@
+# input vidio
+input_video: 
+  url: "https://www.youtube.com/shorts/VWGLWJ4MXQQ"
+
+# Video Processing
+video:
+  target_fps: 30
+  target_width: 1280
+  target_height: 720
+  output_format: "mp4"
+
+# Pose Estimation
+pose:
+  model_complexity: 1
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+# Biomechanics Thresholds
+thresholds:
+  elbow_angle:
+    good_min: 100
+    good_max: 140
+  spine_lean:
+    good_min: 5
+    good_max: 25
+  head_knee_alignment:
+    max_distance: 50
+  foot_direction:
+    ideal_angle: 45
+
+# Scoring Weights
+scoring:
+  footwork: 0.2
+  head_position: 0.2
+  swing_control: 0.25
+  balance: 0.2
+  follow_through: 0.15
+
+# Output Settings
+output:
+  directory: "./output"
+  video_name: "annotated_video.mp4"
+  evaluation_file: "evaluation.json"
